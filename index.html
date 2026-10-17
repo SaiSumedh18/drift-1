@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DRIFT-1</title>
+<meta name="description" content="DRIFT-1, a concept pocket drone synthesizer. The hero is the instrument: a liquid-chrome form you can play, shape and hear in the browser.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <a class="logo" href="#top"><span class="logo-mark" aria-hidden="true"></span>Kiln Instruments</a>
+  <nav aria-label="Page">
+    <a href="#controls">Controls</a>
+    <a href="#specs">Specs</a>
+    <a href="#waitlist" class="nav-cta">Join waitlist</a>
+  </nav>
+</header>
+
+<main id="top">
+  <!-- The one moving moment on the page: the hero is the instrument -->
+  <section class="hero" aria-labelledby="hero-title">
+    <canvas id="stage" aria-hidden="true"></canvas>
+    <div class="hero-shade" aria-hidden="true"></div>
+
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="led" id="led" aria-hidden="true"></span>Pocket drone synthesizer</p>
+      <h1 id="hero-title">DRIFT‑1</h1>
+      <p class="lede">Three voices that never quite agree, three knobs, and no screen. Press play and shape the sound with the controls, or press into the surface.</p>
+      <div class="actions">
+        <button type="button" class="play" id="play" aria-pressed="false">
+          <span class="play-icon" aria-hidden="true"></span>
+          <span class="play-label">Hear it</span>
+        </button>
+        <a class="ghost" href="#controls">How it works</a>
+      </div>
+      <p class="note">Sound starts only when you press play. Use headphones for the low end.</p>
+    </div>
+
+    <div class="console" aria-label="DRIFT-1 controls">
+      <div class="scope"><canvas id="scope" aria-hidden="true"></canvas><span class="scope-label" id="scope-label">IDLE</span></div>
+      <div class="knobs">
+        <div class="knob" id="k-drift" role="slider" tabindex="0" aria-label="Drift" aria-valuemin="0" aria-valuemax="100">
+          <div class="knob-body"><div class="knob-dial"></div></div>
+          <span class="knob-name">Drift</span><span class="knob-val"></span>
+        </div>
+        <div class="knob" id="k-tone" role="slider" tabindex="0" aria-label="Tone" aria-valuemin="0" aria-valuemax="100">
+          <div class="knob-body"><div class="knob-dial"></div></div>
+          <span class="knob-name">Tone</span><span class="knob-val"></span>
+        </div>
+        <div class="knob" id="k-space" role="slider" tabindex="0" aria-label="Space" aria-valuemin="0" aria-valuemax="100">
+          <div class="knob-body"><div class="knob-dial"></div></div>
+          <span class="knob-name">Space</span><span class="knob-val"></span>
+        </div>
+      </div>
+      <p class="console-hint">Drag a knob up or down, or focus it and use the arrow keys.</p>
+    </div>
+  </section>
+
+  <section class="statement">
+    <p>Most synthesizers ask you to play notes. DRIFT‑1 plays one chord forever and lets you steer it. Set it on a desk, turn a knob a few degrees, and the room changes.</p>
+  </section>
+
+  <section class="controls" id="controls" aria-labelledby="controls-title">
+    <div class="section-head">
+      <p class="eyebrow">The controls</p>
+      <h2 id="controls-title">Three knobs. Every range is printed on the panel.</h2>
+    </div>
+    <div class="ctl-grid">
+      <article class="ctl">
+        <svg class="ctl-icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="17"/><path d="M24 24 13 14"/><path d="M6 38c5-3 9-3 12 0s7 3 12 0 8-3 12 0"/></svg>
+        <h3>Drift</h3>
+        <p>How far the three voices wander from pitch, and how fast the filter breathes. At zero it is a still chord. Turned up, it slowly falls apart and finds itself again.</p>
+        <dl><dt>Filter LFO</dt><dd>0.02 – 4 Hz</dd><dt>Voice detune</dt><dd>0 – 18 cents</dd></dl>
+      </article>
+      <article class="ctl">
+        <svg class="ctl-icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="17"/><path d="M24 24 35 15"/><path d="M6 40h10l6-8h20"/></svg>
+        <h3>Tone</h3>
+        <p>Opens a resonant low-pass filter from a hum you feel more than hear, up to a bright edge. The chrome surface cools as the tone gets brighter.</p>
+        <dl><dt>Cutoff</dt><dd>280 Hz – 3.2 kHz</dd><dt>Resonance</dt><dd>Q 6, fixed</dd></dl>
+      </article>
+      <article class="ctl">
+        <svg class="ctl-icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="17"/><path d="M24 24 24 9"/><path d="M8 40h4M16 40h4M24 40h4M32 40h4M40 40h2" /></svg>
+        <h3>Space</h3>
+        <p>Feeds a tape-style delay back into itself. Low settings add a short echo. High settings smear the chord into a wash that keeps ringing after you stop.</p>
+        <dl><dt>Delay time</dt><dd>420 ms</dd><dt>Feedback</dt><dd>0 – 82 %</dd></dl>
+      </article>
+    </div>
+  </section>
+
+  <section class="specs" id="specs" aria-labelledby="specs-title">
+    <div class="section-head">
+      <p class="eyebrow">Specifications</p>
+      <h2 id="specs-title">Small enough for a coat pocket</h2>
+    </div>
+    <dl class="spec-list">
+      <div><dt>Voices</dt><dd>3 analog-modelled oscillators, D2 · A2 · F3</dd></div>
+      <div><dt>Output</dt><dd>3.5 mm stereo, 24-bit / 48 kHz</dd></div>
+      <div><dt>Speaker</dt><dd>2 W built-in, rear-firing</dd></div>
+      <div><dt>Battery</dt><dd>18 hours, USB-C charging</dd></div>
+      <div><dt>Body</dt><dd>Bead-blasted aluminium, 152 × 96 × 28 mm</dd></div>
+      <div><dt>Weight</dt><dd>312 g</dd></div>
+    </dl>
+  </section>
+
+  <section class="waitlist" id="waitlist" aria-labelledby="waitlist-title">
+    <div class="wl-copy">
+      <p class="eyebrow">First batch · spring 2027</p>
+      <h2 id="waitlist-title">$249, built in batches of 500</h2>
+      <p>Leave an email and we'll tell you when the first batch opens.</p>
+    </div>
+    <form class="wl-form" id="wl-form" novalidate>
+      <label for="wl-email">Email address</label>
+      <div class="wl-row">
+        <input id="wl-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" maxlength="254" required>
+        <input class="hp" name="company" id="wl-company" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button type="submit">Join waitlist</button>
+      </div>
+      <p class="wl-msg" id="wl-msg" role="status"></p>
+      <p class="wl-count" id="wl-count" hidden></p>
+    </form>
+  </section>
+</main>
+
+<footer class="foot">
+  <p>DRIFT‑1 and Kiln Instruments are a design concept. The hero synth runs live in your browser with the Web Audio API, the surface is a Three.js shader, and the waitlist is a serverless API backed by Redis.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
