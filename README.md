@@ -1,5 +1,7 @@
 # DRIFT-1
 
+**Live demo:** https://saisumedh18.github.io/drift-1/ (the 3D hero and synth; the waitlist API runs on the Vercel deployment)
+
 A concept landing page for a pocket drone synthesizer, where **the hero is the instrument**.
 
 A liquid-chrome form and a live Web Audio drone share three controls (Drift, Tone and Space). Turn a knob and the sound and the surface change together. The synth's loudness drives the surface in real time, and you can press into the form to dent it. Everything below the hero stays still on purpose: one strong interaction, and the rest of the page breathes.

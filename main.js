@@ -165,8 +165,12 @@
     countEl.textContent = n === 1 ? "1 person is on the list." : `${n.toLocaleString("en-US")} people are on the list.`;
     countEl.hidden = false;
   };
-  fetch("api/waitlist", { headers: { Accept: "application/json" } })
-    .then((r) => (r.ok ? r.json() : null)).then((d) => d && showCount(d.count)).catch(() => {});
+  // static hosts (GitHub Pages) have no API, so only ask for the count where one can exist
+  const staticHost = /\.github\.io$/.test(location.hostname);
+  if (!staticHost) {
+    fetch("api/waitlist", { headers: { Accept: "application/json" } })
+      .then((r) => (r.ok ? r.json() : null)).then((d) => d && showCount(d.count)).catch(() => {});
+  }
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
