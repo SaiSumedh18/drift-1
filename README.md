@@ -1,6 +1,6 @@
 # DRIFT-1
 
-**Live demo:** https://saisumedh18.github.io/drift-1/ (the 3D hero and synth; the waitlist API runs on the Vercel deployment)
+**Live demo:** https://drift-1.vercel.app (the 3D hero, the synth and a working waitlist). A static mirror without the API is at https://saisumedh18.github.io/drift-1/.
 
 A concept landing page for a pocket drone synthesizer, where **the hero is the instrument**.
 
